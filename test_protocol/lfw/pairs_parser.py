@@ -36,7 +36,7 @@ class LFW_PairsParser(PairsParser):
         line = pairs_file_buf.readline() # skip first line
         line = pairs_file_buf.readline().strip()
         while line:
-            line_strs = line.split('\t')
+            line_strs = line.split(' ')
             if len(line_strs) == 3:
                 image_name1 = line_strs[0]
                 image_name2 = line_strs[1]
@@ -80,57 +80,41 @@ class RFW_PairsParser(PairsParser):
 class CPLFW_PairsParser(PairsParser):
     """The pairs parser for cplfw.
     """
-    def parse_pairs(self):        
-        pair_list = []
-        pairs_file_buf = open(self.pairs_file)
-        line1 = pairs_file_buf.readline().strip()
-        while line1:
-            line2 = pairs_file_buf.readline().strip()
-            image_name1 = line1.split(' ')[0]
-            image_name2 = line2.split(' ')[0]
-            label = line1.split(' ')[1]
-            pair_list.append((image_name1, image_name2, int(label)))
-            line1 = pairs_file_buf.readline().strip()
-        assert(len(pair_list) == 6000)
+    def parse_pairs(self):
         test_pair_list = []
-        positive_start = 0 # 0-2999
-        negtive_start = 3000 # 3000 - 5999
-        for set_idx in range(10):
-            positive_index = positive_start + 300 * set_idx
-            negtive_index = negtive_start + 300 * set_idx
-            cur_positive_pair_list = pair_list[positive_index : positive_index + 300]
-            cur_negtive_pair_list = pair_list[negtive_index : negtive_index + 300]
-            test_pair_list.extend(cur_positive_pair_list)
-            test_pair_list.extend(cur_negtive_pair_list)
+        pairs_file_buf = open(self.pairs_file)
+        line = pairs_file_buf.readline() # skip first line
+        line = pairs_file_buf.readline().strip()
+        while line:
+            line_strs = line.split(' ')
+            if len(line_strs) == 3:
+                image_name1 = line_strs[0]
+                image_name2 = line_strs[1]
+                label = line_strs[2]
+            else:
+                raise Exception('Line error: %s.' % line)
+            test_pair_list.append((image_name1, image_name2, label))
+            line = pairs_file_buf.readline().strip()
         return test_pair_list
 
 class CALFW_PairsParser(PairsParser):
     """The pairs parser for calfw.
     """
     def parse_pairs(self):
-        pair_list = []
-        pairs_file_buf = open(self.pairs_file)
-        line1 = pairs_file_buf.readline().strip()
-        while line1:
-            line2 = pairs_file_buf.readline().strip()
-            image_name1 = line1.split(' ')[0]
-            image_name2 = line2.split(' ')[0]
-            label = int(line1.split(' ')[1])
-            if label != 0:
-                label = 1
-            pair_list.append((image_name1, image_name2, label))
-            line1 = pairs_file_buf.readline().strip()
-        assert(len(pair_list) == 6000)
         test_pair_list = []
-        positive_start = 0 # 0-2999
-        negtive_start = 3000 # 3000 - 5999
-        for set_idx in range(10):
-            positive_index = positive_start + 300 * set_idx
-            negtive_index = negtive_start + 300 * set_idx
-            cur_positive_pair_list = pair_list[positive_index : positive_index + 300]
-            cur_negtive_pair_list = pair_list[negtive_index : negtive_index + 300]
-            test_pair_list.extend(cur_positive_pair_list)
-            test_pair_list.extend(cur_negtive_pair_list)
+        pairs_file_buf = open(self.pairs_file)
+        line = pairs_file_buf.readline() # skip first line
+        line = pairs_file_buf.readline().strip()
+        while line:
+            line_strs = line.split(' ')
+            if len(line_strs) == 3:
+                image_name1 = line_strs[0]
+                image_name2 = line_strs[1]
+                label = line_strs[2]
+            else:
+                raise Exception('Line error: %s.' % line)
+            test_pair_list.append((image_name1, image_name2, label))
+            line = pairs_file_buf.readline().strip()
         return test_pair_list
 
 class AgeDB_PairsParser(PairsParser):
