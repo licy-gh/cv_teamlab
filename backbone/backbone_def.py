@@ -20,6 +20,7 @@ from backbone.ReXNets import ReXNetV1
 from backbone.LightCNN import LightCNN
 from backbone.RepVGG import RepVGG
 from backbone.Swin_Transformer import SwinTransformer
+from backbone.Swin_Transformer_new import SwinTransformerNew
 
 class BackboneFactory:
     """Factory to produce backbone according the backbone_conf.yaml.
@@ -157,6 +158,34 @@ class BackboneFactory:
                                        ape=False,
                                        patch_norm=True,
                                        use_checkpoint=False)
+
+        elif self.backbone_type == 'SwinTransformerNew':
+            img_size = self.backbone_param['img_size']
+            patch_size= self.backbone_param['patch_size']
+            in_chans = self.backbone_param['in_chans']
+            embed_dim = self.backbone_param['embed_dim']
+            depths = self.backbone_param['depths']
+            num_heads = self.backbone_param['num_heads']
+            window_size = self.backbone_param['window_size']
+            mlp_ratio = self.backbone_param['mlp_ratio']
+            drop_rate = self.backbone_param['drop_rate']
+            drop_path_rate = self.backbone_param['drop_path_rate']
+            backbone = SwinTransformerNew(img_size=img_size,
+                                       patch_size=patch_size,
+                                       in_chans=in_chans,
+                                       embed_dim=embed_dim,
+                                       depths=depths,
+                                       num_heads=num_heads,
+                                       window_size=window_size,
+                                       mlp_ratio=mlp_ratio,
+                                       qkv_bias=True,
+                                       qk_scale=None,
+                                       drop_rate=drop_rate,
+                                       drop_path_rate=drop_path_rate,
+                                       ape=False,
+                                       patch_norm=True,
+                                       use_checkpoint=False)
+
         else:
             pass
         return backbone
