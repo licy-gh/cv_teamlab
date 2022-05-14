@@ -1,0 +1,151 @@
+/root/miniconda3/lib/python3.8/site-packages/apex/pyprof/__init__.py:5: FutureWarning: pyprof will be removed by the end of June, 2022
+  warnings.warn("pyprof will be removed by the end of June, 2022", FutureWarning)
+/root/miniconda3/lib/python3.8/site-packages/apex/pyprof/__init__.py:5: FutureWarning: pyprof will be removed by the end of June, 2022
+  warnings.warn("pyprof will be removed by the end of June, 2022", FutureWarning)
+Use GPU: 0 for trainingUse GPU: 1 for training
+
+INFO 2022-05-13 22:51:53 distributed_c10d.py: 187] Added key: store_based_barrier_key:1 to store for rank: 1
+INFO 2022-05-13 22:51:53 distributed_c10d.py: 187] Added key: store_based_barrier_key:1 to store for rank: 0
+backbone param:
+{'img_size': 224, 'patch_size': 4, 'in_chans': 3, 'embed_dim': 96, 'depths': [2, 2, 6, 2], 'num_heads': [3, 6, 12, 24], 'window_size': 7, 'mlp_ratio': 4.0, 'drop_rate': 0.0, 'drop_path_rate': 0.3}
+backbone param:
+{'img_size': 224, 'patch_size': 4, 'in_chans': 3, 'embed_dim': 96, 'depths': [2, 2, 6, 2], 'num_heads': [3, 6, 12, 24], 'window_size': 7, 'mlp_ratio': 4.0, 'drop_rate': 0.0, 'drop_path_rate': 0.3}
+head param:
+{'feat_dim': 1, 'num_class': 72778, 'is_am': 1, 'margin': 0.35, 'mv_weight': 1.12, 'scale': 32}
+head param:
+{'feat_dim': 1, 'num_class': 72778, 'is_am': 1, 'margin': 0.35, 'mv_weight': 1.12, 'scale': 32}
+Selected optimization level O1:  Insert automatic casts around Pytorch functions and Tensor methods.
+
+Defaults for this optimization level are:
+enabled                : True
+opt_level              : O1
+cast_model_type        : None
+patch_torch_functions  : True
+keep_batchnorm_fp32    : None
+master_weights         : None
+loss_scale             : dynamic
+Processing user overrides (additional kwargs that are not None)...
+After processing overrides, optimization options are:
+enabled                : True
+opt_level              : O1
+cast_model_type        : None
+patch_torch_functions  : True
+keep_batchnorm_fp32    : None
+master_weights         : None
+loss_scale             : dynamic
+INFO 2022-05-13 22:51:58 train.py: 89] Epoch 0, iter 0/628, lr 0.000000, loss 0.734323
+INFO 2022-05-13 22:51:59 distributed.py: 693] Reducer buckets have been rebuilt in this iteration.
+INFO 2022-05-13 22:51:59 distributed.py: 693] Reducer buckets have been rebuilt in this iteration.
+INFO 2022-05-13 22:55:32 train.py: 89] Epoch 0, iter 200/628, lr 0.000054, loss 0.447133
+INFO 2022-05-13 22:59:05 train.py: 89] Epoch 0, iter 400/628, lr 0.000107, loss 0.393278
+INFO 2022-05-13 23:02:39 train.py: 89] Epoch 0, iter 600/628, lr 0.000160, loss 0.386460
+INFO 2022-05-13 23:03:07 train.py: 109] Save checkpoint Epoch_0.pt to disk...
+INFO 2022-05-13 23:03:08 train.py: 89] Epoch 1, iter 0/628, lr 0.000167, loss 0.382876
+INFO 2022-05-13 23:06:41 train.py: 89] Epoch 1, iter 200/628, lr 0.000220, loss 0.380700
+INFO 2022-05-13 23:10:15 train.py: 89] Epoch 1, iter 400/628, lr 0.000273, loss 0.377311
+INFO 2022-05-13 23:13:48 train.py: 89] Epoch 1, iter 600/628, lr 0.000326, loss 0.372033
+INFO 2022-05-13 23:14:16 train.py: 109] Save checkpoint Epoch_1.pt to disk...
+INFO 2022-05-13 23:14:17 train.py: 89] Epoch 2, iter 0/628, lr 0.000334, loss 0.367844
+INFO 2022-05-13 23:17:50 train.py: 89] Epoch 2, iter 200/628, lr 0.000387, loss 0.365927
+INFO 2022-05-13 23:21:23 train.py: 89] Epoch 2, iter 400/628, lr 0.000440, loss 0.363635
+INFO 2022-05-13 23:24:56 train.py: 89] Epoch 2, iter 600/628, lr 0.000493, loss 0.355001
+INFO 2022-05-13 23:25:25 train.py: 109] Save checkpoint Epoch_2.pt to disk...
+INFO 2022-05-13 23:25:26 train.py: 89] Epoch 3, iter 0/628, lr 0.000467, loss 0.360207
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+INFO 2022-05-13 23:28:59 train.py: 89] Epoch 3, iter 200/628, lr 0.000460, loss 0.357603
+INFO 2022-05-13 23:32:32 train.py: 89] Epoch 3, iter 400/628, lr 0.000452, loss 0.346870
+INFO 2022-05-13 23:36:05 train.py: 89] Epoch 3, iter 600/628, lr 0.000443, loss 0.343414
+INFO 2022-05-13 23:36:33 train.py: 109] Save checkpoint Epoch_3.pt to disk...
+INFO 2022-05-13 23:36:34 train.py: 89] Epoch 4, iter 0/628, lr 0.000442, loss 0.341799
+INFO 2022-05-13 23:40:08 train.py: 89] Epoch 4, iter 200/628, lr 0.000433, loss 0.339122
+INFO 2022-05-13 23:43:41 train.py: 89] Epoch 4, iter 400/628, lr 0.000423, loss 0.336357
+INFO 2022-05-13 23:47:14 train.py: 89] Epoch 4, iter 600/628, lr 0.000413, loss 0.336448
+INFO 2022-05-13 23:47:42 train.py: 109] Save checkpoint Epoch_4.pt to disk...
+INFO 2022-05-13 23:47:43 train.py: 89] Epoch 5, iter 0/628, lr 0.000412, loss 0.334970
+INFO 2022-05-13 23:51:16 train.py: 89] Epoch 5, iter 200/628, lr 0.000401, loss 0.339196
+INFO 2022-05-13 23:54:49 train.py: 89] Epoch 5, iter 400/628, lr 0.000390, loss 0.338814
+INFO 2022-05-13 23:58:22 train.py: 89] Epoch 5, iter 600/628, lr 0.000378, loss 0.338241
+INFO 2022-05-13 23:58:50 train.py: 109] Save checkpoint Epoch_5.pt to disk...
+INFO 2022-05-13 23:58:51 train.py: 89] Epoch 6, iter 0/628, lr 0.000376, loss 0.348045
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32768.0
+INFO 2022-05-14 00:02:24 train.py: 89] Epoch 6, iter 200/628, lr 0.000364, loss 0.343532
+INFO 2022-05-14 00:05:57 train.py: 89] Epoch 6, iter 400/628, lr 0.000352, loss 0.339876
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 16384.0
+INFO 2022-05-14 00:09:29 train.py: 89] Epoch 6, iter 600/628, lr 0.000339, loss 0.339828
+INFO 2022-05-14 00:09:57 train.py: 109] Save checkpoint Epoch_6.pt to disk...
+INFO 2022-05-14 00:09:58 train.py: 89] Epoch 7, iter 0/628, lr 0.000337, loss 0.374116
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 8192.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 4096.0
+INFO 2022-05-14 00:13:31 train.py: 89] Epoch 7, iter 200/628, lr 0.000324, loss 0.383254
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 2048.0
+INFO 2022-05-14 00:17:04 train.py: 89] Epoch 7, iter 400/628, lr 0.000311, loss 0.448689
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 1024.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 1024.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 512.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 512.0
+INFO 2022-05-14 00:20:37 train.py: 89] Epoch 7, iter 600/628, lr 0.000297, loss 0.505375
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 256.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 256.0
+INFO 2022-05-14 00:21:05 train.py: 109] Save checkpoint Epoch_7.pt to disk...
+INFO 2022-05-14 00:21:06 train.py: 89] Epoch 8, iter 0/628, lr 0.000295, loss 0.600276
+INFO 2022-05-14 00:24:38 train.py: 89] Epoch 8, iter 200/628, lr 0.000282, loss 0.585397
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 128.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 128.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 64.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 64.0
+INFO 2022-05-14 00:28:10 train.py: 89] Epoch 8, iter 400/628, lr 0.000268, loss 0.592467
+INFO 2022-05-14 00:31:43 train.py: 89] Epoch 8, iter 600/628, lr 0.000254, loss 0.653791
+INFO 2022-05-14 00:32:11 train.py: 109] Save checkpoint Epoch_8.pt to disk...
+INFO 2022-05-14 00:32:12 train.py: 89] Epoch 9, iter 0/628, lr 0.000253, loss 0.627662
+INFO 2022-05-14 00:35:44 train.py: 89] Epoch 9, iter 200/628, lr 0.000239, loss 0.635272
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32.0
+Gradient overflow.  Skipping step, loss scaler 0 reducing loss scale to 32.0
+INFO 2022-05-14 00:39:17 train.py: 89] Epoch 9, iter 400/628, lr 0.000225, loss 0.593918
+INFO 2022-05-14 00:42:50 train.py: 89] Epoch 9, iter 600/628, lr 0.000211, loss 0.550218
+INFO 2022-05-14 00:43:18 train.py: 109] Save checkpoint Epoch_9.pt to disk...
+INFO 2022-05-14 00:43:19 train.py: 89] Epoch 10, iter 0/628, lr 0.000210, loss 0.534894
+INFO 2022-05-14 00:46:51 train.py: 89] Epoch 10, iter 200/628, lr 0.000196, loss 0.525436
+INFO 2022-05-14 00:50:24 train.py: 89] Epoch 10, iter 400/628, lr 0.000183, loss 0.536880
+INFO 2022-05-14 00:53:56 train.py: 89] Epoch 10, iter 600/628, lr 0.000170, loss 0.499849
+INFO 2022-05-14 00:54:24 train.py: 109] Save checkpoint Epoch_10.pt to disk...
+INFO 2022-05-14 00:54:25 train.py: 89] Epoch 11, iter 0/628, lr 0.000168, loss 0.523952
+INFO 2022-05-14 00:57:58 train.py: 89] Epoch 11, iter 200/628, lr 0.000155, loss 0.476806
+INFO 2022-05-14 01:01:30 train.py: 89] Epoch 11, iter 400/628, lr 0.000143, loss 0.451271
+INFO 2022-05-14 01:05:03 train.py: 89] Epoch 11, iter 600/628, lr 0.000130, loss 0.419860
+INFO 2022-05-14 01:05:31 train.py: 109] Save checkpoint Epoch_11.pt to disk...
+INFO 2022-05-14 01:05:32 train.py: 89] Epoch 12, iter 0/628, lr 0.000129, loss 0.416319
+INFO 2022-05-14 01:09:04 train.py: 89] Epoch 12, iter 200/628, lr 0.000117, loss 0.402767
+INFO 2022-05-14 01:12:37 train.py: 89] Epoch 12, iter 400/628, lr 0.000106, loss 0.396412
+INFO 2022-05-14 01:16:09 train.py: 89] Epoch 12, iter 600/628, lr 0.000095, loss 0.389231
+INFO 2022-05-14 01:16:37 train.py: 109] Save checkpoint Epoch_12.pt to disk...
+INFO 2022-05-14 01:16:38 train.py: 89] Epoch 13, iter 0/628, lr 0.000093, loss 0.394728
+INFO 2022-05-14 01:20:11 train.py: 89] Epoch 13, iter 200/628, lr 0.000083, loss 0.383568
+INFO 2022-05-14 01:23:43 train.py: 89] Epoch 13, iter 400/628, lr 0.000073, loss 0.381388
+INFO 2022-05-14 01:27:16 train.py: 89] Epoch 13, iter 600/628, lr 0.000064, loss 0.376417
+INFO 2022-05-14 01:27:44 train.py: 109] Save checkpoint Epoch_13.pt to disk...
+INFO 2022-05-14 01:27:45 train.py: 89] Epoch 14, iter 0/628, lr 0.000063, loss 0.378970
+INFO 2022-05-14 01:31:18 train.py: 89] Epoch 14, iter 200/628, lr 0.000054, loss 0.371768
+INFO 2022-05-14 01:34:50 train.py: 89] Epoch 14, iter 400/628, lr 0.000046, loss 0.370884
+INFO 2022-05-14 01:38:23 train.py: 89] Epoch 14, iter 600/628, lr 0.000039, loss 0.367732
+INFO 2022-05-14 01:38:51 train.py: 109] Save checkpoint Epoch_14.pt to disk...
+INFO 2022-05-14 01:38:52 train.py: 89] Epoch 15, iter 0/628, lr 0.000038, loss 0.370891
+INFO 2022-05-14 01:42:24 train.py: 89] Epoch 15, iter 200/628, lr 0.000032, loss 0.367526
+INFO 2022-05-14 01:45:57 train.py: 89] Epoch 15, iter 400/628, lr 0.000026, loss 0.366571
+INFO 2022-05-14 01:49:29 train.py: 89] Epoch 15, iter 600/628, lr 0.000021, loss 0.363558
+INFO 2022-05-14 01:49:57 train.py: 109] Save checkpoint Epoch_15.pt to disk...
+INFO 2022-05-14 01:49:58 train.py: 89] Epoch 16, iter 0/628, lr 0.000020, loss 0.366188
+INFO 2022-05-14 01:53:31 train.py: 89] Epoch 16, iter 200/628, lr 0.000016, loss 0.363957
+INFO 2022-05-14 01:57:03 train.py: 89] Epoch 16, iter 400/628, lr 0.000012, loss 0.363807
+INFO 2022-05-14 02:00:36 train.py: 89] Epoch 16, iter 600/628, lr 0.000009, loss 0.362748
+INFO 2022-05-14 02:01:04 train.py: 109] Save checkpoint Epoch_16.pt to disk...
+INFO 2022-05-14 02:01:05 train.py: 89] Epoch 17, iter 0/628, lr 0.000009, loss 0.366944
+INFO 2022-05-14 02:04:38 train.py: 89] Epoch 17, iter 200/628, lr 0.000007, loss 0.362236
+INFO 2022-05-14 02:08:11 train.py: 89] Epoch 17, iter 400/628, lr 0.000005, loss 0.362844
+INFO 2022-05-14 02:11:44 train.py: 89] Epoch 17, iter 600/628, lr 0.000005, loss 0.361292
+INFO 2022-05-14 02:12:12 train.py: 109] Save checkpoint Epoch_17.pt to disk...
