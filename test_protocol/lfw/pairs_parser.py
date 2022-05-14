@@ -37,13 +37,17 @@ class LFW_PairsParser(PairsParser):
         line = pairs_file_buf.readline().strip()
         while line:
             line_strs = line.split(' ')
-            if len(line_strs) == 3:
+            if len(line_strs) == 2:
+                image_name = line_strs[0]
+                label = line_strs[1]
+                test_pair_list.append((image_name, label))
+            elif len(line_strs) == 3:
                 image_name1 = line_strs[0]
                 image_name2 = line_strs[1]
                 label = line_strs[2]
+                test_pair_list.append((image_name1, image_name2, label))
             else:
                 raise Exception('Line error: %s.' % line)
-            test_pair_list.append((image_name1, image_name2, label))
             line = pairs_file_buf.readline().strip()
         return test_pair_list
 
@@ -87,13 +91,17 @@ class CPLFW_PairsParser(PairsParser):
         line = pairs_file_buf.readline().strip()
         while line:
             line_strs = line.split(' ')
-            if len(line_strs) == 3:
+            if len(line_strs) == 2:
+                image_name = line_strs[0]
+                label = line_strs[1]
+                test_pair_list.append((image_name, label))
+            elif len(line_strs) == 3:
                 image_name1 = line_strs[0]
                 image_name2 = line_strs[1]
                 label = line_strs[2]
+                test_pair_list.append((image_name1, image_name2, label))
             else:
                 raise Exception('Line error: %s.' % line)
-            test_pair_list.append((image_name1, image_name2, label))
             line = pairs_file_buf.readline().strip()
         return test_pair_list
 
@@ -107,13 +115,17 @@ class CALFW_PairsParser(PairsParser):
         line = pairs_file_buf.readline().strip()
         while line:
             line_strs = line.split(' ')
-            if len(line_strs) == 3:
+            if len(line_strs) == 2:
+                image_name = line_strs[0]
+                label = line_strs[1]
+                test_pair_list.append((image_name, label))
+            elif len(line_strs) == 3:
                 image_name1 = line_strs[0]
                 image_name2 = line_strs[1]
                 label = line_strs[2]
+                test_pair_list.append((image_name1, image_name2, label))
             else:
                 raise Exception('Line error: %s.' % line)
-            test_pair_list.append((image_name1, image_name2, label))
             line = pairs_file_buf.readline().strip()
         return test_pair_list
 

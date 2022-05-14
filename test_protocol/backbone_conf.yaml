@@ -139,7 +139,7 @@ RepVGG:
     feat_dim: 512
 
 SwinTransformer:
-    img_size: 112
+    img_size: 224
     patch_size: 4
     in_chans: 3
     embed_dim: 96
@@ -159,7 +159,7 @@ SwinTransformer:
     drop_path_rate: 0.3
 
 SwinTransformerNew:
-    img_size: 112
+    img_size: 224
     patch_size: 4
     in_chans: 3
     embed_dim: 96

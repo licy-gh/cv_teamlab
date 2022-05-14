@@ -1,15 +1,15 @@
 LFW:
-    pairs_file_path: /root/FaceX-Zoo/data/files/lfw_test_pairs.txt
+    pairs_file_path: /root/FaceX-Zoo/data/files/lfw_det_test_pairs.txt
     cropped_face_folder: /root/autodl-tmp/lfw
     image_list_file_path: /root/FaceX-Zoo/data/files/lfw_test_img_list.txt
 
 CPLFW:
-    pairs_file_path: /root/FaceX-Zoo/data/files/cplfw_test_pairs.txt
+    pairs_file_path: /root/FaceX-Zoo/data/files/cplfw_det_test_pairs.txt
     cropped_face_folder: /root/autodl-tmp/cplfw
     image_list_file_path: /root/FaceX-Zoo/data/files/cplfw_test_img_list.txt
 
 CALFW:
-    pairs_file_path: /root/FaceX-Zoo/data/files/calfw_test_pairs.txt
+    pairs_file_path: /root/FaceX-Zoo/data/files/calfw_det_test_pairs.txt
     cropped_face_folder: /root/autodl-tmp/calfw
     image_list_file_path: /root/FaceX-Zoo/data/files/calfw_test_img_list.txt
 

@@ -45,7 +45,7 @@ CurricularFace:
     scale: 64
 
 MV-Softmax:
-    feat_dim: 512
+    feat_dim: 1
     num_class: 72778
     is_am: 1
     margin: 0.35

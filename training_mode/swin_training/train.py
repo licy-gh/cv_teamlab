@@ -47,11 +47,11 @@ class FaceModel(torch.nn.Module):
         """
         super(FaceModel, self).__init__()
         self.backbone = backbone_factory.get_backbone()
-        self.head = head_factory.get_head()
+        # self.head = head_factory.get_head()
 
     def forward(self, data, label):
         feat = self.backbone.forward(data)
-        pred = self.head.forward(feat, label)
+        pred = feat
         return pred
 
 def get_lr(optimizer):
@@ -73,6 +73,7 @@ def train_one_epoch(data_loader, model, optimizer, lr_schedule, criterion, cur_e
             loss = criterion(outputs, labels) + lamda_lm
         else:
             outputs = model.forward(images, labels)
+            outputs = torch.softmax(outputs, dim=1)
             loss = criterion(outputs, labels)
         optimizer.zero_grad()
         with amp.scale_loss(loss, optimizer) as scaled_loss:
