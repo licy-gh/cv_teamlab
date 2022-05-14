@@ -559,8 +559,8 @@ class SwinTransformerNew(nn.Module):
         #self.avgpool = nn.AdaptiveAvgPool1d(1)
         self.output_layer = nn.Sequential(norm_layer(self.num_features),
                                        Flatten(),
-                                       nn.Linear(49*768, 512),
-                                       nn.BatchNorm1d(512))
+                                       nn.Linear(49*768, 2),
+                                       nn.BatchNorm1d(2))
 
         self.apply(self._init_weights)
 
