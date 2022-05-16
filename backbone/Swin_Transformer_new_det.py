@@ -377,6 +377,9 @@ class BasicLayer(nn.Module):
                                  norm_layer=norm_layer)
             for i in range(depth)])
 
+        # TODO: add a conv layer to merge embeddings from the two SwinTransformerBlock branches
+        self.conv_merge = nn.Conv2d(dim * 2, dim, (1, 1))
+
         # patch merging layer
         if downsample is not None:
             self.downsample = downsample(input_resolution, dim=dim, norm_layer=norm_layer)
@@ -384,11 +387,22 @@ class BasicLayer(nn.Module):
             self.downsample = None
 
     def forward(self, x):
-        for blk in self.blocks:
+        # TODO: modify connections between blocks
+        x2 = x
+        for bi in range(self.depth // 2):
+            w_blk = self.blocks[2 * bi]
+            sw_blk = self.blocks[2 * bi + 1]
             if self.use_checkpoint:
-                x = checkpoint.checkpoint(blk, x)
+                x = checkpoint.checkpoint(w_blk, x)
+                x2 = checkpoint.checkpoint(sw_blk, x2)
             else:
-                x = blk(x)
+                x = w_blk(x)
+                x2 = sw_blk(x2)
+        x = x.permute(0, 2, 1).unsqueeze(3)
+        x2 = x2.permute(0, 2, 1).unsqueeze(3)
+        x = self.conv_merge(torch.cat([x, x2], dim=1))
+        x = x.squeeze().permute(0, 2, 1)
+
         if self.downsample is not None:
             x = self.downsample(x)
         return x
@@ -453,7 +467,7 @@ class PatchEmbed(nn.Module):
         return flops
 
 
-class SwinTransformer(nn.Module):
+class SwinTransformerNewDet(nn.Module):
     r""" Swin Transformer
         A PyTorch impl of : `Swin Transformer: Hierarchical Vision Transformer using Shifted Windows`  -
           https://arxiv.org/pdf/2103.14030
@@ -493,6 +507,10 @@ class SwinTransformer(nn.Module):
         self.patch_norm = patch_norm
         self.num_features = int(embed_dim * 2 ** (self.num_layers - 1))
         self.mlp_ratio = mlp_ratio
+
+        # TODO: add a check to prevent incorrect depths
+        for d in depths:
+            assert d % 2 == 0, 'Each depth should be a multiple of 2'
 
         # split image into non-overlapping patches
         self.patch_embed = PatchEmbed(
@@ -534,8 +552,8 @@ class SwinTransformer(nn.Module):
         #self.avgpool = nn.AdaptiveAvgPool1d(1)
         self.output_layer = nn.Sequential(norm_layer(self.num_features),
                                        Flatten(),
-                                       nn.Linear(49*768, 512),
-                                       nn.BatchNorm1d(512))
+                                       nn.Linear(49*768, 2),
+                                       nn.BatchNorm1d(2))
 
         self.apply(self._init_weights)
 

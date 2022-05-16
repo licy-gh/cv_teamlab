@@ -1,2 +1,2 @@
-resized到224x224的训练集和测试集下载链接: https://pan.baidu.com/s/1AKYPUqFbi_pfGtYd185QQA?pwd=p6wm 
-提取码：p6wm 
+数据集，包括训练集和测试集链接：https://pan.baidu.com/s/1ARoSrIlq4gQPEJw2RmhpYA?pwd=zivd 
+提取码：zivd 

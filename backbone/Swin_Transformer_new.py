@@ -1,10 +1,3 @@
-# --------------------------------------------------------
-# Swin Transformer
-# Copyright (c) 2021 Microsoft
-# Licensed under The MIT License [see LICENSE for details]
-# Written by Ze Liu
-# --------------------------------------------------------
-
 import torch
 import torch.nn as nn
 import torch.utils.checkpoint as checkpoint
@@ -559,8 +552,8 @@ class SwinTransformerNew(nn.Module):
         #self.avgpool = nn.AdaptiveAvgPool1d(1)
         self.output_layer = nn.Sequential(norm_layer(self.num_features),
                                        Flatten(),
-                                       nn.Linear(49*768, 2),
-                                       nn.BatchNorm1d(2))
+                                       nn.Linear(49*768, 512),
+                                       nn.BatchNorm1d(512))
 
         self.apply(self._init_weights)
 
